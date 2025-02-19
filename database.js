@@ -16,7 +16,7 @@ export  async function showTables() {
 }
 
 export  async function showUsers(){
-    const result = await pool.query('select username from users')
+    const result = await pool.query('select username from farmers')
     return result[0];
 }
 
