@@ -5,8 +5,11 @@ import cropRoutes from './routes/crops.js';
 import userRoutes from './routes/users.js';
 import rentalRoutes from './routes/rental.js';
 import { showTables } from './database.js';
+
+import { startAIChatServer } from './aichatserver.js';
 import path from "path";
 const __dirname = path.resolve();
+
 
 const app = express();
 
@@ -34,6 +37,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
+  startAIChatServer(8080);
     console.log(`Server running on port ${PORT}`);
 });
     
